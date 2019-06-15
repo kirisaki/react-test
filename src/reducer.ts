@@ -1,12 +1,13 @@
 import { Msg, TodoActions } from './actions'
-import { string } from 'prop-types';
 
 export interface TodoState {
-  todos: {
-    id: number
-    content: string
-  }[]
+  todos: TodoType[]
   serial: number
+}
+
+export type TodoType = {
+  id: number
+  content: string
 }
 
 const init: TodoState = ({
@@ -19,11 +20,11 @@ export const reducer = (state: TodoState = init, action: TodoActions): TodoState
     case Msg.AddTodo:
       return {
         todos: [
-          ...state.todos,
           {
             id: state.serial,
             content: action.payload.content
           },
+          ...state.todos
         ],
         serial: state.serial + 1,
       }
