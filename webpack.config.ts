@@ -2,8 +2,10 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
+const mode = process.env.NODE_eNV === 'production' ? 'production' : 'development'
+
 const config: webpack.Configuration = {
-  mode: 'production',
+  mode,
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),

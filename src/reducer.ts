@@ -11,7 +11,7 @@ export interface TodoState {
 
 const init: TodoState = ({
   todos: [],
-  serial: 0
+  serial: 0,
 })
 
 export const reducer = (state: TodoState = init, action: TodoActions): TodoState => {
@@ -25,7 +25,7 @@ export const reducer = (state: TodoState = init, action: TodoActions): TodoState
             content: action.payload.content
           },
         ],
-        serial: state.serial + 1
+        serial: state.serial + 1,
       }
     default:
       return state

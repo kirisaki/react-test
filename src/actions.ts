@@ -1,7 +1,8 @@
 import { Action } from 'redux'
 
 export enum Msg {
-  AddTodo = 'ADD_TODO'
+  AddTodo = 'ADD_TODO',
+  ChangeInput = 'CHANGE_INPUT'
 }
 
 export type AddTodoPayload = {
@@ -13,9 +14,10 @@ interface AddTodoAction extends Action {
   payload: AddTodoPayload
 }
 
-export const addToDo = (payload: AddTodoPayload): AddTodoAction => ({
+export const addTodo = (payload: AddTodoPayload): AddTodoAction => ({
   type: Msg.AddTodo,
   payload,
 })
 
-export type TodoActions = AddTodoAction
+export type TodoActions
+  = AddTodoAction
