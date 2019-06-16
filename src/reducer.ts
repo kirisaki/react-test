@@ -1,6 +1,6 @@
 import { Msg, TodoActions } from './actions'
 
-export interface TodoState {
+export type TodoState = {
   todos: TodoType[]
   serial: number
 }

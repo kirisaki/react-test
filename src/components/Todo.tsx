@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { TodoType } from '../reducer'
 import { deleteTodo } from "../actions";
 
-type Props = {
+interface Props {
   content: TodoType
   onDelete: (id: number) => void
 }

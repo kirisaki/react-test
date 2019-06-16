@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { string } from "prop-types"
 import { addTodo } from '../actions'
 
-interface InputState {
+type InputState = {
   content: string
 }
 
