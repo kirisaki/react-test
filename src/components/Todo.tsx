@@ -14,9 +14,9 @@ class Todo extends React.Component<Props, {}> {
   }
   render() {
     return (
-      <div>
+      <div className="todo">
         <p>{this.props.content.content}</p>
-        <button onClick={this.onClickHandler}>×</button>
+        <span onClick={this.onClickHandler}></span>
       </div>
     )
   }

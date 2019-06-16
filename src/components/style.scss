@@ -1,9 +1,75 @@
+$dark-color: #333333;
+$white-color: #f3f3f3;
+$pink-color: #ff34d0;
+
 * {
+  body {
+    font-family: "Josefin Sans";
+    font-size: 11pt;
+    background-color: $dark-color;
+  }
   h1 {
     color: red;
   }
 }
 
+main {
+  width: 20rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  background-color: $white-color;
+  border-radius: 1px;
+}
+
 .title {
-  color: blue;
+  color: $dark-color;
+}
+
+.todo {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 1rem;
+  border: 2px solid $dark-color;
+  border-radius: 1rem;
+  > p {
+  }
+  > span {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 10px;
+    border: solid 2px #000;
+    border-radius: 50%;
+    background-color: $white-color;
+    cursor: pointer;
+    &:hover {
+      background-color: $pink-color;
+    }
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 51%;
+      left: 5px;
+      width: 15px;
+      height: 3px;
+      margin-top: -2px;
+      background: #000;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 51%;
+      left: 5px;
+      width: 15px;
+      height: 3px;
+      margin-top: -2px;
+      background: #000;
+      transform: rotate(45deg);
+    }
+  }
 }

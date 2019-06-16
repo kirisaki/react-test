@@ -12,7 +12,7 @@ const config: webpack.Configuration = {
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: [".ts", ".tsx", ".js", ".json", ".scss"]
   },
   module: {
     rules: [
@@ -25,12 +25,7 @@ const config: webpack.Configuration = {
         test: /\.s?css$/,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options :{
-              modules: true
-            }
-          },
+          'css-loader',
           'sass-loader'
         ]
       }
