@@ -2,7 +2,7 @@ import { Action } from 'redux'
 
 export enum Msg {
   AddTodo = 'ADD_TODO',
-  ChangeInput = 'CHANGE_INPUT'
+  DeleteTodo = 'DELETE_TODO'
 }
 
 export type AddTodoPayload = {
@@ -19,5 +19,20 @@ export const addTodo = (payload: AddTodoPayload): AddTodoAction => ({
   payload,
 })
 
+export type DeleteTodoPayload = {
+  id: number
+}
+
+interface DeleteTodoAction extends Action {
+  type: Msg.DeleteTodo
+  payload: DeleteTodoPayload
+}
+
+export const deleteTodo = (payload: DeleteTodoPayload): DeleteTodoAction => ({
+  type: Msg.DeleteTodo,
+  payload,
+})
+
 export type TodoActions
   = AddTodoAction
+  | DeleteTodoAction

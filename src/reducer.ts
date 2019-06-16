@@ -28,6 +28,11 @@ export const reducer = (state: TodoState = init, action: TodoActions): TodoState
         ],
         serial: state.serial + 1,
       }
+    case Msg.DeleteTodo:
+      return {
+        todos: state.todos.filter(x => x.id != action.payload.id),
+        serial: state.serial
+      }
     default:
       return state
   }

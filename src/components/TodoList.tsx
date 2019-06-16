@@ -4,9 +4,6 @@ import { TodoState, TodoType } from '../reducer'
 import Todo from './Todo'
 
 class TodoList extends React.Component<{state: TodoState}> {
-  constructor(props: {state: TodoState}){
-    super(props)
-  }
   render() {
     return (
       <div>{this.props.state.todos.map(renderOne)}</div>
@@ -23,6 +20,5 @@ const renderOne = (todo: TodoType) => {
 export default connect(
   state => ({
     state
-  }),
-  dispatch => ({})
+  })
 )(TodoList)
